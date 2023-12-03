@@ -45,6 +45,7 @@
             // 
             // itemsListbox
             // 
+            this.itemsListbox.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.itemsListbox.FormattingEnabled = true;
             this.itemsListbox.ItemHeight = 20;
             this.itemsListbox.Location = new System.Drawing.Point(19, 103);
@@ -66,6 +67,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(1200, 692);
             this.Controls.Add(this.itemsListboxLabel);
             this.Controls.Add(this.itemsListbox);
