@@ -100,6 +100,10 @@ namespace ConsignmentShopUi
                 shoppingCartData.Add(selectedItem);
                 cartBinding.ResetBindings(false);
             }
+            else
+            {
+                MessageBox.Show("Item already in Cart");
+            }
           
         }
 
