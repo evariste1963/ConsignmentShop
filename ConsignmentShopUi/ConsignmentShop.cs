@@ -99,12 +99,13 @@ namespace ConsignmentShopUi
             {
                 shoppingCartData.Add(selectedItem);
                 cartBinding.ResetBindings(false);
+
             }
             else
             {
                 MessageBox.Show("Item already in Cart");
             }
-          
+
         }
 
         private void makePurchase_Click(object sender, EventArgs e)
@@ -120,6 +121,21 @@ namespace ConsignmentShopUi
 
             cartBinding.ResetBindings(false);
             itemsBinding.ResetBindings(false);
+        }
+
+        private void removeFromcartBtn_Click(object sender, EventArgs e)
+        {
+            if (shoppingCartListbox.SelectedIndex > -1)
+                {
+                Item selectedCartItem = (Item)shoppingCartListbox.SelectedItem;
+                selectedCartItem.Sold = false;
+                    shoppingCartData.Remove(selectedCartItem);
+
+                    cartBinding.ResetBindings(false);
+                    itemsBinding.ResetBindings(false);
+                }
+
+
         }
     }
 }

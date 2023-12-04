@@ -35,6 +35,7 @@
             this.shoppingCartListbox = new System.Windows.Forms.ListBox();
             this.addToCartBtn = new System.Windows.Forms.Button();
             this.makePurchase = new System.Windows.Forms.Button();
+            this.removeFromcartBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // headertext
@@ -91,7 +92,7 @@
             // addToCartBtn
             // 
             this.addToCartBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.addToCartBtn.Location = new System.Drawing.Point(506, 214);
+            this.addToCartBtn.Location = new System.Drawing.Point(505, 165);
             this.addToCartBtn.Name = "addToCartBtn";
             this.addToCartBtn.Size = new System.Drawing.Size(165, 56);
             this.addToCartBtn.TabIndex = 5;
@@ -110,12 +111,24 @@
             this.makePurchase.UseVisualStyleBackColor = false;
             this.makePurchase.Click += new System.EventHandler(this.makePurchase_Click);
             // 
+            // removeFromcartBtn
+            // 
+            this.removeFromcartBtn.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.removeFromcartBtn.Location = new System.Drawing.Point(505, 240);
+            this.removeFromcartBtn.Name = "removeFromcartBtn";
+            this.removeFromcartBtn.Size = new System.Drawing.Size(165, 56);
+            this.removeFromcartBtn.TabIndex = 7;
+            this.removeFromcartBtn.Text = "<=  Remove From Cart ";
+            this.removeFromcartBtn.UseVisualStyleBackColor = false;
+            this.removeFromcartBtn.Click += new System.EventHandler(this.removeFromcartBtn_Click);
+            // 
             // ConsignmentShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(1164, 528);
+            this.Controls.Add(this.removeFromcartBtn);
             this.Controls.Add(this.makePurchase);
             this.Controls.Add(this.addToCartBtn);
             this.Controls.Add(this.shoppingCartListboxLabel);
@@ -142,6 +155,7 @@
         private System.Windows.Forms.ListBox shoppingCartListbox;
         private System.Windows.Forms.Button addToCartBtn;
         private System.Windows.Forms.Button makePurchase;
+        private System.Windows.Forms.Button removeFromcartBtn;
     }
 }
 
