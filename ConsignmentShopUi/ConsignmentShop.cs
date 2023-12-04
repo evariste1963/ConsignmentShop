@@ -95,8 +95,12 @@ namespace ConsignmentShopUi
         {
             Item selectedItem = (Item)itemsListbox.SelectedItem;
 
-            shoppingCartData.Add(selectedItem);
-            cartBinding.ResetBindings(false);
+            if (!shoppingCartData.Contains(selectedItem))
+            {
+                shoppingCartData.Add(selectedItem);
+                cartBinding.ResetBindings(false);
+            }
+          
         }
 
         private void makePurchase_Click(object sender, EventArgs e)
