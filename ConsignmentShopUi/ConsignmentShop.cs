@@ -14,7 +14,9 @@ namespace ConsignmentShopUi
     public partial class ConsignmentShop : Form
     {
         private Store store = new Store();
+        private List<Item> shoppingCartData = new List<Item>();
         BindingSource itemsBinding = new BindingSource();
+        BindingSource cartBinding = new BindingSource();
 
         public ConsignmentShop()
         {
@@ -26,6 +28,12 @@ namespace ConsignmentShopUi
 
             itemsListbox.DisplayMember = "Display";
             itemsListbox.ValueMember = "Display";
+
+            cartBinding.DataSource = shoppingCartData;
+            shoppingCartListbox.DataSource = cartBinding;
+
+            shoppingCartListbox.DisplayMember = "Display";
+            shoppingCartListbox.ValueMember = "Display";
         }
 
         private void SetupData()
@@ -76,6 +84,11 @@ namespace ConsignmentShopUi
         private void ConsignmentShop_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void addToCartBtn_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
