@@ -17,12 +17,12 @@ namespace ConsignmentShopUi
         private List<Item> shoppingCartData = new List<Item>();
         BindingSource itemsBinding = new BindingSource();
         BindingSource cartBinding = new BindingSource();
-
+       
         public ConsignmentShop()
         {
             InitializeComponent();
             SetupData();
-
+            
             GenerateItemsBindings();
             itemsListbox.DataSource = itemsBinding;
 
@@ -103,7 +103,6 @@ namespace ConsignmentShopUi
                 shoppingCartData.Add(selectedItem);
                 selectedItem.InCart = true;
                 cartBinding.ResetBindings(false);
-               
                 GenerateItemsBindings();
             }
             else
@@ -148,6 +147,11 @@ namespace ConsignmentShopUi
         private void shoppingCartListbox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void headertext_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

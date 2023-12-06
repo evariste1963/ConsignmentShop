@@ -42,11 +42,12 @@
             // 
             this.headertext.AutoSize = true;
             this.headertext.Font = new System.Drawing.Font("Ink Free", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.headertext.Location = new System.Drawing.Point(12, 24);
+            this.headertext.Location = new System.Drawing.Point(392, 9);
             this.headertext.Name = "headertext";
             this.headertext.Size = new System.Drawing.Size(367, 39);
             this.headertext.TabIndex = 0;
             this.headertext.Text = "Consignment Shop Demo";
+            this.headertext.Click += new System.EventHandler(this.headertext_Click);
             // 
             // itemsListbox
             // 
