@@ -88,7 +88,7 @@ namespace ConsignmentShopUi
 
         private void ConsignmentShop_Load(object sender, EventArgs e)
         {
-
+            headertext.Text = store.Name;
         }
 
         private void addToCartBtn_Click(object sender, EventArgs e)

@@ -41,12 +41,14 @@
             // headertext
             // 
             this.headertext.AutoSize = true;
-            this.headertext.Font = new System.Drawing.Font("Ink Free", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.headertext.Location = new System.Drawing.Point(392, 9);
+            this.headertext.Font = new System.Drawing.Font("Ink Free", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.headertext.Location = new System.Drawing.Point(443, 0);
             this.headertext.Name = "headertext";
-            this.headertext.Size = new System.Drawing.Size(367, 39);
+            this.headertext.Padding = new System.Windows.Forms.Padding(10);
+            this.headertext.Size = new System.Drawing.Size(282, 80);
             this.headertext.TabIndex = 0;
-            this.headertext.Text = "Consignment Shop Demo";
+            this.headertext.Text = "store name";
+            this.headertext.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.headertext.Click += new System.EventHandler(this.headertext_Click);
             // 
             // itemsListbox
