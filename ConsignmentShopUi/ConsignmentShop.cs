@@ -17,12 +17,12 @@ namespace ConsignmentShopUi
         private List<Item> shoppingCartData = new List<Item>();
         BindingSource itemsBinding = new BindingSource();
         BindingSource cartBinding = new BindingSource();
-       
+
         public ConsignmentShop()
         {
             InitializeComponent();
             SetupData();
-            
+
             GenerateItemsBindings();
             itemsListbox.DataSource = itemsBinding;
 
@@ -151,7 +151,24 @@ namespace ConsignmentShopUi
 
         private void headertext_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void refreshDataBtn_Click(object sender, EventArgs e)
+        {
+
+            if (itemsListbox.Items.Count < 1 && shoppingCartListbox.Items.Count < 1)
+                foreach (Item item in store.Items)
+                {
+                    item.Sold = false;
+                    item.InCart = false;
+
+                    GenerateItemsBindings();
+                }
+
+
+
+
         }
     }
 }

@@ -36,6 +36,7 @@
             this.addToCartBtn = new System.Windows.Forms.Button();
             this.makePurchase = new System.Windows.Forms.Button();
             this.removeFromcartBtn = new System.Windows.Forms.Button();
+            this.refreshDataBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // headertext
@@ -126,12 +127,24 @@
             this.removeFromcartBtn.UseVisualStyleBackColor = false;
             this.removeFromcartBtn.Click += new System.EventHandler(this.removeFromcartBtn_Click);
             // 
+            // refreshDataBtn
+            // 
+            this.refreshDataBtn.Font = new System.Drawing.Font("Ink Free", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refreshDataBtn.Location = new System.Drawing.Point(2, 485);
+            this.refreshDataBtn.Name = "refreshDataBtn";
+            this.refreshDataBtn.Size = new System.Drawing.Size(70, 40);
+            this.refreshDataBtn.TabIndex = 8;
+            this.refreshDataBtn.Text = "Refresh";
+            this.refreshDataBtn.UseVisualStyleBackColor = true;
+            this.refreshDataBtn.Click += new System.EventHandler(this.refreshDataBtn_Click);
+            // 
             // ConsignmentShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(1164, 528);
+            this.Controls.Add(this.refreshDataBtn);
             this.Controls.Add(this.removeFromcartBtn);
             this.Controls.Add(this.makePurchase);
             this.Controls.Add(this.addToCartBtn);
@@ -160,6 +173,7 @@
         private System.Windows.Forms.Button addToCartBtn;
         private System.Windows.Forms.Button makePurchase;
         private System.Windows.Forms.Button removeFromcartBtn;
+        private System.Windows.Forms.Button refreshDataBtn;
     }
 }
 
