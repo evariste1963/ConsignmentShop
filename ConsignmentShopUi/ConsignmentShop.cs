@@ -38,7 +38,7 @@ namespace ConsignmentShopUi
 
         private void GenerateItemsBindings()
         {
-            itemsBinding.DataSource = store.Items.Where(x => x.Sold == false).ToList();
+            itemsBinding.DataSource = store.Items.Where(x => x.Sold == false && x.InCart == false).ToList();
         }
 
         private void SetupData()
@@ -95,11 +95,16 @@ namespace ConsignmentShopUi
         {
             Item selectedItem = (Item)itemsListbox.SelectedItem;
 
+            if (itemsListbox.Items.Count < 1) return;
+
             if (!shoppingCartData.Contains(selectedItem))
             {
-                shoppingCartData.Add(selectedItem);
-                cartBinding.ResetBindings(false);
 
+                shoppingCartData.Add(selectedItem);
+                selectedItem.InCart = true;
+                cartBinding.ResetBindings(false);
+               
+                GenerateItemsBindings();
             }
             else
             {
@@ -125,16 +130,23 @@ namespace ConsignmentShopUi
 
         private void removeFromcartBtn_Click(object sender, EventArgs e)
         {
-            if (shoppingCartListbox.SelectedIndex > -1)
-                {
+            if (shoppingCartListbox.Items.Count > 0)
+            {
                 Item selectedCartItem = (Item)shoppingCartListbox.SelectedItem;
                 selectedCartItem.Sold = false;
-                    shoppingCartData.Remove(selectedCartItem);
+                selectedCartItem.InCart = false;
+                shoppingCartData.Remove(selectedCartItem);
 
-                    cartBinding.ResetBindings(false);
-                    itemsBinding.ResetBindings(false);
-                }
+                cartBinding.ResetBindings(false);
+                itemsBinding.ResetBindings(false);
+                GenerateItemsBindings();
+            }
 
+
+        }
+
+        private void shoppingCartListbox_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

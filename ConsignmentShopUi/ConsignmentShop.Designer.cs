@@ -88,6 +88,7 @@
             this.shoppingCartListbox.Name = "shoppingCartListbox";
             this.shoppingCartListbox.Size = new System.Drawing.Size(360, 264);
             this.shoppingCartListbox.TabIndex = 3;
+            this.shoppingCartListbox.SelectedIndexChanged += new System.EventHandler(this.shoppingCartListbox_SelectedIndexChanged);
             // 
             // addToCartBtn
             // 
