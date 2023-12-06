@@ -122,9 +122,8 @@ namespace ConsignmentShopUi
             shoppingCartData.Clear();
 
             GenerateItemsBindings();
-
             cartBinding.ResetBindings(false);
-            itemsBinding.ResetBindings(false);
+           
         }
 
         private void removeFromcartBtn_Click(object sender, EventArgs e)
@@ -137,7 +136,6 @@ namespace ConsignmentShopUi
                 shoppingCartData.Remove(selectedCartItem);
 
                 cartBinding.ResetBindings(false);
-                itemsBinding.ResetBindings(false);
                 GenerateItemsBindings();
             }
 
