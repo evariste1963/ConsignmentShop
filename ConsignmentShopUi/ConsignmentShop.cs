@@ -95,20 +95,20 @@ namespace ConsignmentShopUi
         {
             Item selectedItem = (Item)itemsListbox.SelectedItem;
 
-            if (itemsListbox.Items.Count < 1) return;
+           if (itemsListbox.Items.Count < 1) return; 
 
-            if (!shoppingCartData.Contains(selectedItem))
-            {
+           // if (!shoppingCartData.Contains(selectedItem)) //obsolete
+           // {
 
                 shoppingCartData.Add(selectedItem);
                 selectedItem.InCart = true;
                 cartBinding.ResetBindings(false);
                 GenerateItemsBindings();
-            }
-            else
+           // }
+            /* else 
             {
-                MessageBox.Show("Item already in Cart");
-            }
+                MessageBox.Show("Item already in Cart"); 
+            }  */
 
         }
 
