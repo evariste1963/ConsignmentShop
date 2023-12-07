@@ -37,6 +37,7 @@
             this.makePurchase = new System.Windows.Forms.Button();
             this.removeFromcartBtn = new System.Windows.Forms.Button();
             this.refreshDataBtn = new System.Windows.Forms.Button();
+            this.cartTotalBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // headertext
@@ -130,13 +131,21 @@
             // refreshDataBtn
             // 
             this.refreshDataBtn.Font = new System.Drawing.Font("Ink Free", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refreshDataBtn.Location = new System.Drawing.Point(2, 485);
+            this.refreshDataBtn.Location = new System.Drawing.Point(12, 472);
             this.refreshDataBtn.Name = "refreshDataBtn";
-            this.refreshDataBtn.Size = new System.Drawing.Size(70, 40);
+            this.refreshDataBtn.Size = new System.Drawing.Size(96, 44);
             this.refreshDataBtn.TabIndex = 8;
-            this.refreshDataBtn.Text = "Refresh";
+            this.refreshDataBtn.Text = "Restock Store";
             this.refreshDataBtn.UseVisualStyleBackColor = true;
             this.refreshDataBtn.Click += new System.EventHandler(this.refreshDataBtn_Click);
+            // 
+            // cartTotalBox
+            // 
+            this.cartTotalBox.Location = new System.Drawing.Point(736, 374);
+            this.cartTotalBox.Name = "cartTotalBox";
+            this.cartTotalBox.Size = new System.Drawing.Size(178, 27);
+            this.cartTotalBox.TabIndex = 9;
+            this.cartTotalBox.Text = "CartTotal";
             // 
             // ConsignmentShop
             // 
@@ -144,6 +153,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(1164, 528);
+            this.Controls.Add(this.cartTotalBox);
             this.Controls.Add(this.refreshDataBtn);
             this.Controls.Add(this.removeFromcartBtn);
             this.Controls.Add(this.makePurchase);
@@ -174,6 +184,7 @@
         private System.Windows.Forms.Button makePurchase;
         private System.Windows.Forms.Button removeFromcartBtn;
         private System.Windows.Forms.Button refreshDataBtn;
+        private System.Windows.Forms.TextBox cartTotalBox;
     }
 }
 
