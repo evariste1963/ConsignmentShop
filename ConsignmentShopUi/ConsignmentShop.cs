@@ -17,6 +17,7 @@ namespace ConsignmentShopUi
         private List<Item> shoppingCartData = new List<Item>();
         BindingSource itemsBinding = new BindingSource();
         BindingSource cartBinding = new BindingSource();
+        //decimal cartValue;
 
         public ConsignmentShop()
         {
@@ -34,6 +35,7 @@ namespace ConsignmentShopUi
 
             shoppingCartListbox.DisplayMember = "Display";
             shoppingCartListbox.ValueMember = "Display";
+
         }
 
         private void GenerateItemsBindings()
@@ -89,27 +91,32 @@ namespace ConsignmentShopUi
         private void ConsignmentShop_Load(object sender, EventArgs e)
         {
             headertext.Text = store.Name;
+
+
         }
 
         private void addToCartBtn_Click(object sender, EventArgs e)
         {
             Item selectedItem = (Item)itemsListbox.SelectedItem;
 
-           if (itemsListbox.Items.Count < 1) return; 
+            if (itemsListbox.Items.Count < 1) return;
 
-           // if (!shoppingCartData.Contains(selectedItem)) //obsolete
-           // {
+            // if (!shoppingCartData.Contains(selectedItem)) //obsolete
+            // {
 
-                shoppingCartData.Add(selectedItem);
-                selectedItem.InCart = true;
-                cartBinding.ResetBindings(false);
-                GenerateItemsBindings();
-           // }
-            /* else 
+            shoppingCartData.Add(selectedItem);
+            selectedItem.InCart = true;
+            cartBinding.ResetBindings(false);
+            GenerateItemsBindings();
+
+            decimal cartValue = 0;
+            //TODO: refactor this into it's own function
+            //to use for adding and removing items from cart
+            foreach (Item item in shoppingCartData)
             {
-                MessageBox.Show("Item already in Cart"); 
-            }  */
-
+                cartValue += item.Price;
+            }
+            cartTotalValue.Text = cartValue.ToString();
         }
 
         private void makePurchase_Click(object sender, EventArgs e)
@@ -123,7 +130,7 @@ namespace ConsignmentShopUi
 
             GenerateItemsBindings();
             cartBinding.ResetBindings(false);
-           
+
         }
 
         private void removeFromcartBtn_Click(object sender, EventArgs e)

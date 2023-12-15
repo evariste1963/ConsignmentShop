@@ -38,6 +38,7 @@
             this.removeFromcartBtn = new System.Windows.Forms.Button();
             this.refreshDataBtn = new System.Windows.Forms.Button();
             this.cartTotalBox = new System.Windows.Forms.TextBox();
+            this.cartTotalValue = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // headertext
@@ -143,9 +144,16 @@
             // 
             this.cartTotalBox.Location = new System.Drawing.Point(736, 374);
             this.cartTotalBox.Name = "cartTotalBox";
-            this.cartTotalBox.Size = new System.Drawing.Size(178, 27);
+            this.cartTotalBox.Size = new System.Drawing.Size(83, 27);
             this.cartTotalBox.TabIndex = 9;
             this.cartTotalBox.Text = "CartTotal";
+            // 
+            // cartTotalValue
+            // 
+            this.cartTotalValue.Location = new System.Drawing.Point(825, 374);
+            this.cartTotalValue.Name = "cartTotalValue";
+            this.cartTotalValue.Size = new System.Drawing.Size(100, 27);
+            this.cartTotalValue.TabIndex = 10;
             // 
             // ConsignmentShop
             // 
@@ -153,6 +161,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(1164, 528);
+            this.Controls.Add(this.cartTotalValue);
             this.Controls.Add(this.cartTotalBox);
             this.Controls.Add(this.refreshDataBtn);
             this.Controls.Add(this.removeFromcartBtn);
@@ -185,6 +194,7 @@
         private System.Windows.Forms.Button removeFromcartBtn;
         private System.Windows.Forms.Button refreshDataBtn;
         private System.Windows.Forms.TextBox cartTotalBox;
+        private System.Windows.Forms.TextBox cartTotalValue;
     }
 }
 
