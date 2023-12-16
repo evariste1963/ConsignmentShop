@@ -76,13 +76,15 @@ namespace ConsignmentShopUi
             {
                 Title = "Eloquent Javascript",
                 Description = "A book about coding",
-                Price = 4.15M,
+                Price = 104.15M,
                 Owner = store.Vendors[1]
             });
 
             store.Name = "Books u Love";
         }
-
+        /// <summary>
+        /// function to update cart Total value on add and remove from cart
+        /// </summary>
         private void UpdateCartTotal()
         {
             decimal cartValue = 0;
@@ -90,7 +92,8 @@ namespace ConsignmentShopUi
             {
                 cartValue += item.Price;
             }
-            cartTotalValue.Text = "£ " + cartValue.ToString();
+            //converts cartValue decimal to string including local currency symbol
+            cartTotalValue.Text = string.Format("{0:C2}", cartValue);
         }
 
         private void itemsListbox_SelectedIndexChanged(object sender, EventArgs e)
@@ -101,8 +104,6 @@ namespace ConsignmentShopUi
         private void ConsignmentShop_Load(object sender, EventArgs e)
         {
             headertext.Text = store.Name;
-
-
         }
 
         private void addToCartBtn_Click(object sender, EventArgs e)
@@ -111,21 +112,14 @@ namespace ConsignmentShopUi
 
             if (itemsListbox.Items.Count < 1) return;
 
-            // if (!shoppingCartData.Contains(selectedItem)) //obsolete
-            // {
-
             shoppingCartData.Add(selectedItem);
             selectedItem.InCart = true;
             cartBinding.ResetBindings(false);
             GenerateItemsBindings();
 
             UpdateCartTotal();
-            
-            
         }
-
         
-
         private void makePurchase_Click(object sender, EventArgs e)
         {
             foreach (Item item in shoppingCartData)
