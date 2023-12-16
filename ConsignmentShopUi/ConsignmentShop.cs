@@ -83,6 +83,16 @@ namespace ConsignmentShopUi
             store.Name = "Books u Love";
         }
 
+        private void UpdateCartTotal()
+        {
+            decimal cartValue = 0;
+            foreach (Item item in shoppingCartData)
+            {
+                cartValue += item.Price;
+            }
+            cartTotalValue.Text = "£ " + cartValue.ToString();
+        }
+
         private void itemsListbox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -109,15 +119,12 @@ namespace ConsignmentShopUi
             cartBinding.ResetBindings(false);
             GenerateItemsBindings();
 
-            decimal cartValue = 0;
-            //TODO: refactor this into it's own function
-            //to use for adding and removing items from cart
-            foreach (Item item in shoppingCartData)
-            {
-                cartValue += item.Price;
-            }
-            cartTotalValue.Text = cartValue.ToString();
+            UpdateCartTotal();
+            
+            
         }
+
+        
 
         private void makePurchase_Click(object sender, EventArgs e)
         {
@@ -127,6 +134,8 @@ namespace ConsignmentShopUi
             }
 
             shoppingCartData.Clear();
+
+            UpdateCartTotal();
 
             GenerateItemsBindings();
             cartBinding.ResetBindings(false);
@@ -141,6 +150,8 @@ namespace ConsignmentShopUi
                 selectedCartItem.Sold = false;
                 selectedCartItem.InCart = false;
                 shoppingCartData.Remove(selectedCartItem);
+
+                UpdateCartTotal();
 
                 cartBinding.ResetBindings(false);
                 GenerateItemsBindings();
