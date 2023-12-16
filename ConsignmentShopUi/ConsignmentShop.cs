@@ -92,8 +92,10 @@ namespace ConsignmentShopUi
             {
                 cartValue += item.Price;
             }
+            //converts cartValue decimal to string and prepends with £ sign and 0ne space
+            cartTotalValue.Text = "£ " + string.Format("{0:F2}", cartValue);
             //converts cartValue decimal to string including local currency symbol
-            cartTotalValue.Text = string.Format("{0:C2}", cartValue);
+           // cartTotalValue.Text = string.Format("{0:C2}", cartValue);
         }
 
         private void itemsListbox_SelectedIndexChanged(object sender, EventArgs e)

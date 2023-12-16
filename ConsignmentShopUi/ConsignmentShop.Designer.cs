@@ -154,6 +154,7 @@
             this.cartTotalValue.Name = "cartTotalValue";
             this.cartTotalValue.Size = new System.Drawing.Size(100, 27);
             this.cartTotalValue.TabIndex = 10;
+            this.cartTotalValue.Text = "£ 0.00";
             // 
             // ConsignmentShop
             // 
@@ -175,7 +176,9 @@
             this.Font = new System.Drawing.Font("Ink Free", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ConsignmentShop";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consignment Shop Demo";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.ConsignmentShop_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
